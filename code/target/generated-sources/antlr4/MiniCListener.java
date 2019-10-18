@@ -97,6 +97,18 @@ public interface MiniCListener extends ParseTreeListener {
 	 */
 	void exitOrExpr(MiniCParser.OrExprContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code plusplusExpr}
+	 * labeled alternative in {@link MiniCParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterPlusplusExpr(MiniCParser.PlusplusExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code plusplusExpr}
+	 * labeled alternative in {@link MiniCParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitPlusplusExpr(MiniCParser.PlusplusExprContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code minusExpr}
 	 * labeled alternative in {@link MiniCParser#expr}.
 	 * @param ctx the parse tree
@@ -108,6 +120,18 @@ public interface MiniCListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMinusExpr(MiniCParser.MinusExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code minminExpr}
+	 * labeled alternative in {@link MiniCParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterMinminExpr(MiniCParser.MinminExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code minminExpr}
+	 * labeled alternative in {@link MiniCParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitMinminExpr(MiniCParser.MinminExprContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code relationExpr}
 	 * labeled alternative in {@link MiniCParser#expr}.
@@ -225,15 +249,29 @@ public interface MiniCListener extends ParseTreeListener {
 	 */
 	void exitFunc(MiniCParser.FuncContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MiniCParser#printf}.
+	 * Enter a parse tree produced by the {@code parameterPrintf}
+	 * labeled alternative in {@link MiniCParser#printf}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrintf(MiniCParser.PrintfContext ctx);
+	void enterParameterPrintf(MiniCParser.ParameterPrintfContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MiniCParser#printf}.
+	 * Exit a parse tree produced by the {@code parameterPrintf}
+	 * labeled alternative in {@link MiniCParser#printf}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrintf(MiniCParser.PrintfContext ctx);
+	void exitParameterPrintf(MiniCParser.ParameterPrintfContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code commonPrintf}
+	 * labeled alternative in {@link MiniCParser#printf}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonPrintf(MiniCParser.CommonPrintfContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code commonPrintf}
+	 * labeled alternative in {@link MiniCParser#printf}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonPrintf(MiniCParser.CommonPrintfContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MiniCParser#scanf}.
 	 * @param ctx the parse tree
@@ -245,45 +283,71 @@ public interface MiniCListener extends ParseTreeListener {
 	 */
 	void exitScanf(MiniCParser.ScanfContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MiniCParser#printf2}.
+	 * Enter a parse tree produced by the {@code ifBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void enterPrintf2(MiniCParser.Printf2Context ctx);
+	void enterIfBlock(MiniCParser.IfBlockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MiniCParser#printf2}.
+	 * Exit a parse tree produced by the {@code ifBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void exitPrintf2(MiniCParser.Printf2Context ctx);
+	void exitIfBlock(MiniCParser.IfBlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MiniCParser#block}.
+	 * Enter a parse tree produced by the {@code whileBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void enterBlock(MiniCParser.BlockContext ctx);
+	void enterWhileBlock(MiniCParser.WhileBlockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MiniCParser#block}.
+	 * Exit a parse tree produced by the {@code whileBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void exitBlock(MiniCParser.BlockContext ctx);
+	void exitWhileBlock(MiniCParser.WhileBlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MiniCParser#condition_contents}.
+	 * Enter a parse tree produced by the {@code forBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondition_contents(MiniCParser.Condition_contentsContext ctx);
+	void enterForBlock(MiniCParser.ForBlockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MiniCParser#condition_contents}.
+	 * Exit a parse tree produced by the {@code forBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondition_contents(MiniCParser.Condition_contentsContext ctx);
+	void exitForBlock(MiniCParser.ForBlockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link MiniCParser#condition_block}.
+	 * Enter a parse tree produced by {@link MiniCParser#if_contents}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondition_block(MiniCParser.Condition_blockContext ctx);
+	void enterIf_contents(MiniCParser.If_contentsContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link MiniCParser#condition_block}.
+	 * Exit a parse tree produced by {@link MiniCParser#if_contents}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondition_block(MiniCParser.Condition_blockContext ctx);
+	void exitIf_contents(MiniCParser.If_contentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MiniCParser#while_contents}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhile_contents(MiniCParser.While_contentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MiniCParser#while_contents}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhile_contents(MiniCParser.While_contentsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MiniCParser#for_contents}.
+	 * @param ctx the parse tree
+	 */
+	void enterFor_contents(MiniCParser.For_contentsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MiniCParser#for_contents}.
+	 * @param ctx the parse tree
+	 */
+	void exitFor_contents(MiniCParser.For_contentsContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link MiniCParser#condition}.
 	 * @param ctx the parse tree
@@ -294,4 +358,14 @@ public interface MiniCListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCondition(MiniCParser.ConditionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link MiniCParser#condition_block}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition_block(MiniCParser.Condition_blockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link MiniCParser#condition_block}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition_block(MiniCParser.Condition_blockContext ctx);
 }

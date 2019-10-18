@@ -111,6 +111,18 @@ public class MiniCBaseListener implements MiniCListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPlusplusExpr(MiniCParser.PlusplusExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPlusplusExpr(MiniCParser.PlusplusExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMinusExpr(MiniCParser.MinusExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -118,6 +130,18 @@ public class MiniCBaseListener implements MiniCListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMinusExpr(MiniCParser.MinusExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMinminExpr(MiniCParser.MinminExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMinminExpr(MiniCParser.MinminExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -243,13 +267,25 @@ public class MiniCBaseListener implements MiniCListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintf(MiniCParser.PrintfContext ctx) { }
+	@Override public void enterParameterPrintf(MiniCParser.ParameterPrintfContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintf(MiniCParser.PrintfContext ctx) { }
+	@Override public void exitParameterPrintf(MiniCParser.ParameterPrintfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCommonPrintf(MiniCParser.CommonPrintfContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCommonPrintf(MiniCParser.CommonPrintfContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -267,49 +303,73 @@ public class MiniCBaseListener implements MiniCListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterPrintf2(MiniCParser.Printf2Context ctx) { }
+	@Override public void enterIfBlock(MiniCParser.IfBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitPrintf2(MiniCParser.Printf2Context ctx) { }
+	@Override public void exitIfBlock(MiniCParser.IfBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBlock(MiniCParser.BlockContext ctx) { }
+	@Override public void enterWhileBlock(MiniCParser.WhileBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBlock(MiniCParser.BlockContext ctx) { }
+	@Override public void exitWhileBlock(MiniCParser.WhileBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondition_contents(MiniCParser.Condition_contentsContext ctx) { }
+	@Override public void enterForBlock(MiniCParser.ForBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondition_contents(MiniCParser.Condition_contentsContext ctx) { }
+	@Override public void exitForBlock(MiniCParser.ForBlockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondition_block(MiniCParser.Condition_blockContext ctx) { }
+	@Override public void enterIf_contents(MiniCParser.If_contentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondition_block(MiniCParser.Condition_blockContext ctx) { }
+	@Override public void exitIf_contents(MiniCParser.If_contentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWhile_contents(MiniCParser.While_contentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhile_contents(MiniCParser.While_contentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFor_contents(MiniCParser.For_contentsContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFor_contents(MiniCParser.For_contentsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -322,6 +382,18 @@ public class MiniCBaseListener implements MiniCListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCondition(MiniCParser.ConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCondition_block(MiniCParser.Condition_blockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondition_block(MiniCParser.Condition_blockContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

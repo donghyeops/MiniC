@@ -63,12 +63,26 @@ public interface MiniCVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitOrExpr(MiniCParser.OrExprContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code plusplusExpr}
+	 * labeled alternative in {@link MiniCParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPlusplusExpr(MiniCParser.PlusplusExprContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code minusExpr}
 	 * labeled alternative in {@link MiniCParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitMinusExpr(MiniCParser.MinusExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code minminExpr}
+	 * labeled alternative in {@link MiniCParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMinminExpr(MiniCParser.MinminExprContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code relationExpr}
 	 * labeled alternative in {@link MiniCParser#expr}.
@@ -138,11 +152,19 @@ public interface MiniCVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunc(MiniCParser.FuncContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MiniCParser#printf}.
+	 * Visit a parse tree produced by the {@code parameterPrintf}
+	 * labeled alternative in {@link MiniCParser#printf}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrintf(MiniCParser.PrintfContext ctx);
+	T visitParameterPrintf(MiniCParser.ParameterPrintfContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code commonPrintf}
+	 * labeled alternative in {@link MiniCParser#printf}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommonPrintf(MiniCParser.CommonPrintfContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MiniCParser#scanf}.
 	 * @param ctx the parse tree
@@ -150,33 +172,54 @@ public interface MiniCVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitScanf(MiniCParser.ScanfContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MiniCParser#printf2}.
+	 * Visit a parse tree produced by the {@code ifBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrintf2(MiniCParser.Printf2Context ctx);
+	T visitIfBlock(MiniCParser.IfBlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MiniCParser#block}.
+	 * Visit a parse tree produced by the {@code whileBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBlock(MiniCParser.BlockContext ctx);
+	T visitWhileBlock(MiniCParser.WhileBlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MiniCParser#condition_contents}.
+	 * Visit a parse tree produced by the {@code forBlock}
+	 * labeled alternative in {@link MiniCParser#block}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCondition_contents(MiniCParser.Condition_contentsContext ctx);
+	T visitForBlock(MiniCParser.ForBlockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MiniCParser#condition_block}.
+	 * Visit a parse tree produced by {@link MiniCParser#if_contents}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCondition_block(MiniCParser.Condition_blockContext ctx);
+	T visitIf_contents(MiniCParser.If_contentsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MiniCParser#while_contents}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWhile_contents(MiniCParser.While_contentsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MiniCParser#for_contents}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFor_contents(MiniCParser.For_contentsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MiniCParser#condition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitCondition(MiniCParser.ConditionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link MiniCParser#condition_block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition_block(MiniCParser.Condition_blockContext ctx);
 }
