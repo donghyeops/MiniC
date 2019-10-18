@@ -1,0 +1,1 @@
+grun MiniC start -gui input.txt
